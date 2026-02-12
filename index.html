@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Te amo muchísimo</title>
+
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        font-family:Arial, Helvetica, sans-serif;
+        background-color:#ffe6f0;
+        text-align:center;
+        overflow:hidden;
+    }
+
+    h1{
+        font-size:3rem;
+        color:#d1006f;
+        margin-bottom:10px;
+    }
+
+    h2{
+        font-size:2rem;
+        margin-bottom:30px;
+    }
+
+    .botones{
+        display:flex;
+        gap:20px;
+    }
+
+    button{
+        padding:15px 40px;
+        font-size:20px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        transition:all 0.3s ease;
+    }
+
+    #si{
+        background-color:#ff4d88;
+        color:white;
+    }
+
+    #no{
+        background-color:#444;
+        color:white;
+    }
+
+    .mensajeFinal{
+        font-size:3rem;
+        color:#d1006f;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Te amo muchísimo</h1>
+<h2>¿Quieres ser mi San Valentín?</h2>
+
+<div class="botones">
+    <button id="si">Sí</button>
+    <button id="no">No</button>
+</div>
+
+<!-- Audio -->
+<audio id="musica" src="cancion.mp3"></audio>
+
+<script>
+
+let botonSi = document.getElementById("si");
+let botonNo = document.getElementById("no");
+let musica = document.getElementById("musica");
+
+let tamañoSi = 1;
+let tamañoNo = 1;
+
+botonNo.addEventListener("click", function(){
+
+    tamañoSi += 0.3;
+    tamañoNo -= 0.2;
+
+    botonSi.style.transform = "scale(" + tamañoSi + ")";
+    botonNo.style.transform = "scale(" + tamañoNo + ")";
+
+    if(tamañoNo <= 0.2){
+        botonNo.style.display = "none";
+        botonSi.style.transform = "scale(10)";
+        botonSi.style.width = "100vw";
+        botonSi.style.height = "100vh";
+        botonSi.style.fontSize = "4rem";
+    }
+});
+
+botonSi.addEventListener("click", function(){
+
+    musica.play(); // 🔊 Reproduce la canción
+
+    document.body.innerHTML = 
+    "<h1 class='mensajeFinal'>Igual te amo mucho mi Valentín :3 💖</h1>";
+
+});
+
+</script>
+
+</body>
+</html>
+
