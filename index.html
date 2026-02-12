@@ -16,6 +16,7 @@
         background-color:#ffe6f0;
         text-align:center;
         overflow:hidden;
+        position:relative;
     }
 
     h1{
@@ -26,13 +27,7 @@
 
     h2{
         font-size:2rem;
-        margin-bottom:30px;
-    }
-
-    .botones{
-        position:relative;
-        width:100%;
-        height:200px;
+        margin-bottom:40px;
     }
 
     button{
@@ -42,22 +37,21 @@
         border-radius:10px;
         cursor:pointer;
         position:absolute;
+        transition:0.2s;
     }
 
     #si{
         background-color:#ff4d88;
         color:white;
-        left:40%;
-        top:50%;
-        transform:translate(-50%, -50%);
+        left:45%;
+        top:60%;
     }
 
     #no{
         background-color:#444;
         color:white;
-        left:60%;
-        top:50%;
-        transform:translate(-50%, -50%);
+        left:55%;
+        top:60%;
     }
 
     .mensajeFinal{
@@ -73,10 +67,8 @@
 <h1>Te amo muchísimo</h1>
 <h2>¿Quieres ser mi San Valentín?</h2>
 
-<div class="botones">
-    <button id="si">Sí</button>
-    <button id="no">No</button>
-</div>
+<button id="si">Sí</button>
+<button id="no">No</button>
 
 <script>
 
@@ -88,7 +80,7 @@ botonSi.addEventListener("click", function(){
     "<h1 class='mensajeFinal'>Igual te amo mucho mi Valentín :3 💖</h1>";
 });
 
-// Cuando intenten pasar el mouse sobre el botón NO, se moverá
+// El botón NO se escapa
 botonNo.addEventListener("mouseover", function(){
 
     let anchoVentana = window.innerWidth - botonNo.offsetWidth;
@@ -105,3 +97,4 @@ botonNo.addEventListener("mouseover", function(){
 
 </body>
 </html>
+
